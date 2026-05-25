@@ -47,16 +47,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--
-            H2 Embedded Database — NO INSTALLATION NEEDED.
-            H2 runs inside the JVM, stores data in a file.
-            Works exactly like MySQL for this project.
-            Switch back to mysql-connector-j when MySQL is available.
-        -->
+        <!-- MySQL JDBC Driver (Oracle MySQL) -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.2.224</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
             <scope>runtime</scope>
         </dependency>
 
