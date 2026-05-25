@@ -1,0 +1,17 @@
+# render.yaml — Render deployment configuration
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: loginsignupform
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free                    # free tier
+    envVars:
+      - key: DB_URL
+        sync: false               # set manually in Render dashboard
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+    healthCheckPath: /
