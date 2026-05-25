@@ -1,0 +1,426 @@
+/* ========================================================
+   style.css — LoginSignupCRUD
+   A clean, modern, beginner-friendly stylesheet.
+   Uses a soft blue + white color scheme.
+   ======================================================== */
+
+/* ── Google Font Import ─────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── CSS Reset & Base ───────────────────────────────── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f4f8;           /* soft gray-blue background */
+    color: #2d3748;                /* dark text for readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ── Navbar ─────────────────────────────────────────── */
+.navbar {
+    width: 100%;
+    max-width: 1100px;
+    background: #2b6cb0;           /* deep blue */
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+}
+
+.navbar .brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar a {
+    color: #bee3f8;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar a:hover { color: #ffffff; }
+
+/* ── Card / Form Container ──────────────────────────── */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px 50px;
+    width: 100%;
+    max-width: 460px;
+    margin: 20px auto;
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2b6cb0;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card p.subtitle {
+    font-size: 0.88rem;
+    color: #718096;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* ── Form Elements ──────────────────────────────────── */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    background: #f7fafc;
+    color: #2d3748;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    background: #fff;
+}
+
+/* Password wrapper — for show/hide toggle */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 44px;  /* leave space for the eye icon */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #718096;
+    font-size: 1rem;
+    padding: 0;
+    line-height: 1;
+}
+
+.password-toggle:hover { color: #2b6cb0; }
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn:active { transform: scale(0.98); }
+
+/* Primary blue button */
+.btn-primary {
+    background: #3182ce;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 6px;
+    box-shadow: 0 3px 8px rgba(49, 130, 206, 0.35);
+}
+
+.btn-primary:hover {
+    background: #2b6cb0;
+    box-shadow: 0 5px 14px rgba(49, 130, 206, 0.4);
+}
+
+/* Danger red button (delete) */
+.btn-danger {
+    background: #fc8181;
+    color: #742a2a;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+}
+
+.btn-danger:hover { background: #f56565; color: #fff; }
+
+/* Warning yellow button (edit) */
+.btn-warning {
+    background: #f6e05e;
+    color: #744210;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+}
+
+.btn-warning:hover { background: #ecc94b; }
+
+/* Outline / secondary */
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #3182ce;
+    color: #3182ce;
+    padding: 8px 20px;
+}
+
+.btn-outline:hover { background: #ebf8ff; }
+
+/* Logout small button */
+.btn-logout {
+    background: #e53e3e;
+    color: white;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    border-radius: 7px;
+}
+
+.btn-logout:hover { background: #c53030; }
+
+/* ── Alert / Message Boxes ──────────────────────────── */
+.alert {
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.alert-error {
+    background: #fff5f5;
+    color: #c53030;
+    border: 1px solid #fed7d7;
+}
+
+.alert-success {
+    background: #f0fff4;
+    color: #276749;
+    border: 1px solid #c6f6d5;
+}
+
+/* ── Form Footer Links ──────────────────────────────── */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    color: #718096;
+}
+
+.form-footer a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer a:hover { text-decoration: underline; }
+
+/* ── Dashboard Table ────────────────────────────────── */
+.table-container {
+    width: 100%;
+    max-width: 1100px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    background: #ebf8ff;
+    border-bottom: 1px solid #bee3f8;
+}
+
+.table-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2b6cb0;
+}
+
+/* Search bar */
+.search-form {
+    display: flex;
+    gap: 8px;
+}
+
+.search-form input {
+    padding: 8px 14px;
+    border: 1.5px solid #bee3f8;
+    border-radius: 7px;
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    width: 220px;
+}
+
+.search-form input:focus { border-color: #4299e1; }
+
+.search-form button {
+    padding: 8px 16px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.search-form button:hover { background: #2b6cb0; }
+
+/* Data table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #2b6cb0;
+    color: white;
+}
+
+thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.15s;
+}
+
+tbody tr:hover { background: #f7fafc; }
+
+tbody td {
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+tbody tr:last-child { border-bottom: none; }
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    color: #a0aec0;
+    font-size: 1rem;
+}
+
+/* ── Home Page (index.jsp) ───────────────────────────── */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #2b6cb0;
+    margin-bottom: 14px;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: #718096;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 12px 36px;
+    font-size: 1rem;
+}
+
+/* ── Dashboard Welcome Banner ────────────────────────── */
+.welcome-banner {
+    width: 100%;
+    max-width: 1100px;
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+    color: white;
+    padding: 22px 28px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(49, 130, 206, 0.35);
+}
+
+.welcome-banner h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.welcome-banner p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 3px;
+}
+
+/* ── Utility Classes ─────────────────────────────────── */
+.text-center { text-align: center; }
+.mt-10       { margin-top: 10px;  }
+.mt-20       { margin-top: 20px;  }
+.w-full      { width: 100%;       }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+    .card             { padding: 28px 22px; }
+    .table-header     { flex-direction: column; gap: 12px; }
+    .search-form input { width: 100%; }
+    .welcome-banner   { flex-direction: column; gap: 12px; text-align: center; }
+    .navbar           { flex-direction: column; gap: 10px; text-align: center; }
+    .hero h1          { font-size: 1.8rem; }
+}

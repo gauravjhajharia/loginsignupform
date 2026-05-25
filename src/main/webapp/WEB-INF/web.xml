@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    web.xml — Web Application Deployment Descriptor
+    =================================================
+    This file configures your Java web application.
+    It tells Tomcat:
+      - Which file to show first (welcome file)
+      - How long sessions should last
+      - Error page mappings
+
+    NOTE: Since we use @WebServlet annotations in the servlet classes,
+          servlet URL mappings are defined there — NOT here.
+          So this web.xml is kept minimal.
+
+    Beginner Tip:
+      - web.xml is read by Tomcat when it deploys/starts your app
+      - It lives inside WEB-INF/ (which is NOT publicly accessible by browsers)
+      - Anything inside WEB-INF/ is hidden from direct URL access
+-->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Application display name shown in Tomcat Manager -->
+    <display-name>LoginSignupCRUD</display-name>
+
+    <!--
+        Welcome file list:
+        When someone visits the root URL (e.g., http://localhost:8080/LoginSignupCRUD/)
+        Tomcat will serve the first file found from this list.
+    -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!--
+        Default session timeout in minutes.
+        After 30 minutes of inactivity, the session (and login) will expire.
+    -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!--
+        Error page mapping:
+        If a 404 (page not found) error occurs, show a friendly message.
+    -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/index.jsp</location>
+    </error-page>
+
+</web-app>

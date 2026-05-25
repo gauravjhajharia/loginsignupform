@@ -1,0 +1,43 @@
+# Maven build output
+target/
+
+# H2 database file (local data, don't push)
+h2data/
+*.db
+*.mv.db
+*.trace.db
+
+# IDE files — Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# IDE files — IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE files — NetBeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tomcat work directory
+work/
+
+# Logs
+*.log
+logs/
